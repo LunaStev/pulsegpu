@@ -1,6 +1,6 @@
 use proc_macro::TokenStream;
 use quote::quote;
-use syn::{parse_macro_input, Ident, Block, parse::{Parse, ParseStream}, Token, LitInt, braced, Result};
+use syn::{parse_macro_input, Ident, parse::{Parse, ParseStream}, Token, LitInt, braced, Result, Stmt};
 
 pub struct GpuParallelInput {
     pub threads: u32,
