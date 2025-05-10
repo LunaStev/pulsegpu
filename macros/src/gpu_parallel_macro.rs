@@ -50,7 +50,7 @@ pub fn gpu_parallel(input: TokenStream) -> TokenStream {
 
     let expanded = quote! {
         {
-            println!("🚀 gpu_parallel! launched with {} threads, block size: {}", #threads, #block_size);
+            ::std::println!("🚀 gpu_parallel! launched with {} threads, block size: {}", #threads, #block_size);
             for #ident in 0..#threads {
                 #body
             }
