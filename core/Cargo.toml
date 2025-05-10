@@ -1,0 +1,9 @@
+[package]
+name = "pulsegpu_core"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ash = { version = "0.37", features = ["linked"] }
+raw-window-handle = "0.6.2"
+pulsegpu_macros = { path = "../macros" }

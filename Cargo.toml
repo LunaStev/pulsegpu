@@ -1,0 +1,10 @@
+[workspace]
+members = [
+    "core",
+    "dsl",
+    "ir",
+    "backend",
+    "runtime",
+    "ffi",
+    "macros"
+]
