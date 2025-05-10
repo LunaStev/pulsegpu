@@ -6,7 +6,7 @@ pub struct GpuParallelInput {
     pub threads: u32,
     pub block_size: Option<u32>,
     pub ident: Ident,
-    pub body: Box<Block>,
+    pub body: Vec<Stmt>,
 }
 
 impl Parse for GpuParallelInput {
