@@ -30,7 +30,7 @@ impl Parse for GpuParallelInput {
         let ident: Ident = input.parse()?;
         let content;
         braced!(content in input);
-        let body: Block = content.parse()?;
+        let body: Vec<Stmt> = content.call(syn::Block::parse_within)?;
 
         Ok(GpuParallelInput {
             threads,
