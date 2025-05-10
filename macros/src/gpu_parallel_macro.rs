@@ -52,7 +52,9 @@ pub fn gpu_parallel(input: TokenStream) -> TokenStream {
         {
             ::std::println!("🚀 gpu_parallel! launched with {} threads, block size: {}", #threads, #block_size);
             for #ident in 0..#threads {
-                #body
+                {
+                    #(#body)*
+                }
             }
         }
     };
