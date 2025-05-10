@@ -36,7 +36,7 @@ impl Parse for GpuParallelInput {
             threads,
             block_size,
             ident,
-            body: Box::new(body),
+            body: *Box::new(body),
         })
     }
 }
