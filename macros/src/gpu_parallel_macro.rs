@@ -50,12 +50,14 @@ pub fn gpu_parallel(input: TokenStream) -> TokenStream {
 
     let expanded = quote! {
         {
-            ::std::println!("🚀 gpu_parallel! launched with {} threads, block size: {}", #threads, #block_size);
-            for #ident in 0..#threads {
-                {
+            let ir = pulsegpu_ir::parallel_ir::GpuParallelIR {
+                threads: #threads,
+                block_size: #block_size,
+                body: stringify! {
                     #(#body)*
-                }
-            }
+                }.to_string(),
+            };
+            pulsegpu_runtime::dispatcher::dispatch(ir);
         }
     };
 

@@ -6,4 +6,6 @@ edition = "2021"
 [dependencies]
 ash = { version = "0.37", features = ["linked"] }
 raw-window-handle = "0.6.2"
+pulsegpu_ir = { path = "../ir" }
+pulsegpu_runtime = { path = "../runtime" }
 pulsegpu_macros = { path = "../macros" }
